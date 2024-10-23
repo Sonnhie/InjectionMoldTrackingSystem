@@ -37,6 +37,15 @@
             this.moldMasterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.moldTrackingSystemDataSet4 = new MoldMonitoringSystem_Nidec.MoldTrackingSystemDataSet4();
             this.moldMasterTableAdapter = new MoldMonitoringSystem_Nidec.MoldTrackingSystemDataSet4TableAdapters.MoldMasterTableAdapter();
+            this.moldnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dienoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datecreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timecreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moldMasterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moldTrackingSystemDataSet4)).BeginInit();
@@ -91,6 +100,16 @@
             this.advancedDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.advancedDataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.moldnoDataGridViewTextBoxColumn,
+            this.materialDataGridViewTextBoxColumn,
+            this.materialNameDataGridViewTextBoxColumn,
+            this.customerDataGridViewTextBoxColumn,
+            this.dienoDataGridViewTextBoxColumn,
+            this.datecreatedDataGridViewTextBoxColumn,
+            this.timecreatedDataGridViewTextBoxColumn,
+            this.usernameDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn});
             this.advancedDataGridView1.DataSource = this.moldMasterBindingSource;
             this.advancedDataGridView1.FilterAndSortEnabled = true;
             this.advancedDataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
@@ -102,6 +121,7 @@
             this.advancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.advancedDataGridView1.TabIndex = 4;
             this.advancedDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellClick);
+            this.advancedDataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridView1_DataBindingComplete);
             // 
             // moldMasterBindingSource
             // 
@@ -116,6 +136,78 @@
             // moldMasterTableAdapter
             // 
             this.moldMasterTableAdapter.ClearBeforeFill = true;
+            // 
+            // moldnoDataGridViewTextBoxColumn
+            // 
+            this.moldnoDataGridViewTextBoxColumn.DataPropertyName = "Mold_no";
+            this.moldnoDataGridViewTextBoxColumn.HeaderText = "Mold_no";
+            this.moldnoDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.moldnoDataGridViewTextBoxColumn.Name = "moldnoDataGridViewTextBoxColumn";
+            this.moldnoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // materialDataGridViewTextBoxColumn
+            // 
+            this.materialDataGridViewTextBoxColumn.DataPropertyName = "Material";
+            this.materialDataGridViewTextBoxColumn.HeaderText = "Material";
+            this.materialDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.materialDataGridViewTextBoxColumn.Name = "materialDataGridViewTextBoxColumn";
+            this.materialDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // materialNameDataGridViewTextBoxColumn
+            // 
+            this.materialNameDataGridViewTextBoxColumn.DataPropertyName = "Material_Name";
+            this.materialNameDataGridViewTextBoxColumn.HeaderText = "Material_Name";
+            this.materialNameDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.materialNameDataGridViewTextBoxColumn.Name = "materialNameDataGridViewTextBoxColumn";
+            this.materialNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // customerDataGridViewTextBoxColumn
+            // 
+            this.customerDataGridViewTextBoxColumn.DataPropertyName = "Customer";
+            this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
+            this.customerDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
+            this.customerDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dienoDataGridViewTextBoxColumn
+            // 
+            this.dienoDataGridViewTextBoxColumn.DataPropertyName = "Die_no";
+            this.dienoDataGridViewTextBoxColumn.HeaderText = "Die_no";
+            this.dienoDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.dienoDataGridViewTextBoxColumn.Name = "dienoDataGridViewTextBoxColumn";
+            this.dienoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // datecreatedDataGridViewTextBoxColumn
+            // 
+            this.datecreatedDataGridViewTextBoxColumn.DataPropertyName = "Date_created";
+            this.datecreatedDataGridViewTextBoxColumn.HeaderText = "Date_created";
+            this.datecreatedDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.datecreatedDataGridViewTextBoxColumn.Name = "datecreatedDataGridViewTextBoxColumn";
+            this.datecreatedDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // timecreatedDataGridViewTextBoxColumn
+            // 
+            this.timecreatedDataGridViewTextBoxColumn.DataPropertyName = "Time_created";
+            this.timecreatedDataGridViewTextBoxColumn.HeaderText = "Time_created";
+            this.timecreatedDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.timecreatedDataGridViewTextBoxColumn.Name = "timecreatedDataGridViewTextBoxColumn";
+            this.timecreatedDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // MoldmasterList
             // 
@@ -147,5 +239,14 @@
         private MoldTrackingSystemDataSet4 moldTrackingSystemDataSet4;
         private System.Windows.Forms.BindingSource moldMasterBindingSource;
         private MoldTrackingSystemDataSet4TableAdapters.MoldMasterTableAdapter moldMasterTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moldnoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn materialDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn materialNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dienoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datecreatedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timecreatedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
     }
 }

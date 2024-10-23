@@ -31,33 +31,77 @@ namespace MoldMonitoringSystem_Nidec.EndUserForms
         {
             try
             {
-                // Fetch the data from your existing database utility
                 var moldMasterList = _moldDataBaseServiceUtility.GetMoldMasterList();
 
                 if (moldMasterList != null && moldMasterList.Count > 0)
                 {
-                    // Bind the data to a DataGridView (or any table control)
+                    advancedDataGridView1.DataSource = null; 
+                    advancedDataGridView1.AutoGenerateColumns = false;  
+                    advancedDataGridView1.Columns.Clear();  
+
                     
-                    advancedDataGridView1.DataSource = moldMasterList;
-                    advancedDataGridView1.AutoGenerateColumns = true;
+                    advancedDataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+                    {
+                        HeaderText = "Mold Number",
+                        DataPropertyName = "MoldNumber"  // Corresponds to the property name in MoldData
+                    });
+                    advancedDataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+                    {
+                        HeaderText = "Material",
+                        DataPropertyName = "Material"
+                    });
+                    advancedDataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+                    {
+                        HeaderText = "Material Name",
+                        DataPropertyName = "Material_name"
+                    });
+                    advancedDataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+                    {
+                        HeaderText = "Customer",
+                        DataPropertyName = "Customer"
+                    });
+                    advancedDataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+                    {
+                        HeaderText = "Die Number",
+                        DataPropertyName = "DieNumber"
+                    });
+                    advancedDataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+                    {
+                        HeaderText = "Date Created",
+                        DataPropertyName = "DateCreated"
+                    });
+                    advancedDataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+                    {
+                        HeaderText = "Time Created",
+                        DataPropertyName = "TimeCreated"
+                    });
+                    advancedDataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+                    {
+                        HeaderText = "User Name",
+                        DataPropertyName = "UserName"
+                    });
+                    advancedDataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+                    {
+                        HeaderText = "Status",
+                        DataPropertyName = "Status"
+                    });
 
-                    RenameColumns();
-
+                    // Add the delete button column
                     if (advancedDataGridView1.Columns["btnDelete"] == null)
                     {
-                        // Add a delete button column
-                        DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
-                        deleteButton.HeaderText = "Action";
-                        deleteButton.Name = "btnDelete";
-                        deleteButton.Text = "Delete";
-                        deleteButton.UseColumnTextForButtonValue = true; // Show "Delete" as button text
-                        deleteButton.ReadOnly = false;
+                        DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn
+                        {
+                            HeaderText = "Action",
+                            Name = "btnDelete",
+                            Text = "Delete",
+                            UseColumnTextForButtonValue = true
+                        };
                         advancedDataGridView1.Columns.Add(deleteButton);
-
-                       
                     }
+
+                    // Bind the data
+                    advancedDataGridView1.DataSource = moldMasterList;
                 }
-               
                 else
                 {
                     MessageBox.Show("No data found in the mold master list.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -65,10 +109,10 @@ namespace MoldMonitoringSystem_Nidec.EndUserForms
             }
             catch (Exception ex)
             {
-                // Handle exceptions (e.g., database connection issues)
                 MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void RenameColumns()
         {
             // Dictionary to map original column names to their new header texts
@@ -324,6 +368,10 @@ namespace MoldMonitoringSystem_Nidec.EndUserForms
             }
         }
 
-       
+        private void advancedDataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            //advancedDataGridView1.Columns["LastUsedDate"].Visible = false;
+            //advancedDataGridView1.Columns["Location"].Visible = false; 
+        }
     }
 }

@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupIMTS", "SetupIMTS\SetupIMTS.vdproj", "{3A3E10BA-8039-411F-A3C8-096C0AFB9B50}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupIMTS", "SetupIMTS\SetupIMTS.vdproj", "{754DCAF7-6C86-4768-9189-ECCEBCD9298F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,9 +25,9 @@ Global
 		{53664019-1F33-4697-99D5-75A41599EC36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53664019-1F33-4697-99D5-75A41599EC36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53664019-1F33-4697-99D5-75A41599EC36}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A3E10BA-8039-411F-A3C8-096C0AFB9B50}.All|Any CPU.ActiveCfg = Debug
-		{3A3E10BA-8039-411F-A3C8-096C0AFB9B50}.Debug|Any CPU.ActiveCfg = Debug
-		{3A3E10BA-8039-411F-A3C8-096C0AFB9B50}.Release|Any CPU.ActiveCfg = Release
+		{754DCAF7-6C86-4768-9189-ECCEBCD9298F}.All|Any CPU.ActiveCfg = Debug
+		{754DCAF7-6C86-4768-9189-ECCEBCD9298F}.Debug|Any CPU.ActiveCfg = Debug
+		{754DCAF7-6C86-4768-9189-ECCEBCD9298F}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -139,8 +139,6 @@ namespace MoldMonitoringSystem_Nidec.Forms
 
                 MoldNumber.ForeColor = Color.Red;
 
-               
-
                 MoldNumber.SubItems.Add(idleMold.Location);
                 MoldNumber.SubItems.Add(idleMold.Status);
                 MoldNumber.SubItems.Add(idleMold.DateCreated);
