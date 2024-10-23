@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MoldTrackingSystemDataSet3" targetNamespace="http://tempuri.org/MoldTrackingSystemDataSet3.xsd" xmlns:mstns="http://tempuri.org/MoldTrackingSystemDataSet3.xsd" xmlns="http://tempuri.org/MoldTrackingSystemDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MoldTrackingSystemConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MoldTrackingSystemConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MoldMonitoringSystem_Nidec.Properties.Settings.GlobalReference.Default.MoldTrackingSystemConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MoldMasterTableAdapter" GeneratorDataComponentClassName="MoldMasterTableAdapter" Name="MoldMaster" UserDataComponentName="MoldMasterTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MoldTrackingSystemConnectionString (Settings)" DbObjectName="MoldTrackingSystem.dbo.MoldMaster" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Material FROM dbo.MoldMaster</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Material" DataSetColumn="Material" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MoldTrackingSystemDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="MoldTrackingSystemDataSet3" msprop:Generator_DataSetName="MoldTrackingSystemDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MoldMaster" msprop:Generator_RowEvHandlerName="MoldMasterRowChangeEventHandler" msprop:Generator_RowDeletedName="MoldMasterRowDeleted" msprop:Generator_RowDeletingName="MoldMasterRowDeleting" msprop:Generator_RowEvArgName="MoldMasterRowChangeEvent" msprop:Generator_TablePropName="MoldMaster" msprop:Generator_RowChangedName="MoldMasterRowChanged" msprop:Generator_RowChangingName="MoldMasterRowChanging" msprop:Generator_TableClassName="MoldMasterDataTable" msprop:Generator_RowClassName="MoldMasterRow" msprop:Generator_TableVarName="tableMoldMaster" msprop:Generator_UserTableName="MoldMaster">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Material" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_UserColumnName="Material">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
