@@ -15,8 +15,6 @@ namespace MoldMonitoringSystem_Nidec.Forms
     public partial class InjectionReceiving : Form
     {
         private string _employeename;
-        private Timer debounceTimer;
-        private int debounceInterval = 500; // Delay interval in milliseconds
         private readonly MoldDataBaseServiceUtility _dataBaseServiceUtility = new MoldDataBaseServiceUtility();
 
         public InjectionReceiving(string employeename)

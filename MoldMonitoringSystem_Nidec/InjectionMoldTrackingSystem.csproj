@@ -51,9 +51,6 @@
     <Reference Include="AdvancedDataGridView, Version=1.2.29301.14, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DG.AdvancedDataGridView.1.2.29301.14\lib\net40\AdvancedDataGridView.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
-      <HintPath>..\packages\Bunifu\BunifuCrack-main\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
-    </Reference>
     <Reference Include="EPPlus, Version=7.3.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.7.3.2\lib\net462\EPPlus.dll</HintPath>
     </Reference>

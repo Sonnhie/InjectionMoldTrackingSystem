@@ -25,26 +25,8 @@ namespace MoldMonitoringSystem_Nidec
             lockoutTimer.Interval = 1000; // Set timer to tick every second
             lockoutTimer.Tick += LockoutTimer_Tick;
             textBox1.Focus();
-
-            WebClient client = new WebClient();
-            try
-            {
-                if (client.DownloadString("").Contains("1.1.0"))
-                {
-                    if (MessageBox.Show("There is an update! Do you want to download it?", "IMTS app", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes);
-                    {
-                        Process.Start("Updater.exe");
-                        this.Close();
-                    }
-                }
-            }
-            catch
-            {
-
-            }
         }
 
-       
         private void button1_Click(object sender, EventArgs e)
         {
             // Handle lockout
@@ -135,17 +117,14 @@ namespace MoldMonitoringSystem_Nidec
                 lock_lbl.Text = $"Locked out for {Math.Ceiling(remainingSeconds)} seconds"; // Update label with remaining time
             }
         }
-
         private void LoginForm_Load(object sender, EventArgs e)
         {
             textBox1.Focus();
         }
-
         private void showpass_chckbox_CheckedChanged(object sender, EventArgs e)
         {
             textBox2.UseSystemPasswordChar = !showpass_chckbox.Checked;
         }
-
         private void LoginForm_Shown(object sender, EventArgs e)
         {
             textBox1.Focus();

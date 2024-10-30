@@ -14,12 +14,10 @@ namespace MoldMonitoringSystem_Nidec.EndUserForms
 {
     public partial class Print_Logs : Form
     {
-        private PrintUtility _printLogUtility;
         private readonly string _connectionString = "Data Source=192.168.101.41;Initial Catalog=MoldTrackingSystem;User ID=Administrator;Encrypt=False";
         public Print_Logs()
         {
-            InitializeComponent();
-            
+            InitializeComponent();         
         }
        
         private void GetLogs()
@@ -102,7 +100,6 @@ namespace MoldMonitoringSystem_Nidec.EndUserForms
         {
             GetLogs();
         }
-
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
             GetLogs();

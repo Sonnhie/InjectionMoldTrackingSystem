@@ -129,6 +129,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_1BD23C53DA034BFD9D26BC80C37D9FAB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_256747B93FA82B35467BE22C26E0D9FC"
         "OwnerKey" = "8:_FA1CBACDF45DA59CE4A430E146C0B33E"
         "MsmSig" = "8:_UNDEFINED"
@@ -358,12 +364,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9C70B5335211DA55CEC5A6A1E43318D0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_3FDC1CFD341042509133FF4D9D0F9629"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -505,6 +505,12 @@
         "OwnerKey" = "8:_CCAF875E64CBC1C8A5B151B2C24BA395"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9C70B5335211DA55CEC5A6A1E43318D0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -523,6 +529,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -539,6 +553,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -772,6 +802,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1BD23C53DA034BFD9D26BC80C37D9FAB"
+            {
+            "SourcePath" = "8:C:\\Users\\00723\\Downloads\\Logo.ico"
+            "TargetName" = "8:Logo.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_C2F6DDDE97654C6BBF956AB55F29888F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_256747B93FA82B35467BE22C26E0D9FC"
@@ -1420,7 +1470,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SetupIMTS"
         "ProductCode" = "8:{DF700B77-B934-48B0-9EDE-7866B9550384}"
-        "PackageCode" = "8:{3188D9CE-CA73-4E52-9BC1-76B142A23658}"
+        "PackageCode" = "8:{54FB38F9-23FD-4A8D-89AA-9A23D7E1DEB3}"
         "UpgradeCode" = "8:{17D0807F-4E63-4A9F-81D2-D6969D5BB337}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -1540,21 +1590,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5D47A4881FA447D5BC17F4E326C97477"
-            {
-            "Name" = "8:IMTS"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_3FDC1CFD341042509133FF4D9D0F9629"
-            "Folder" = "8:_173D9C6B999E401E8DBBC87ED1159A13"
-            "WorkingFolder" = "8:_C2F6DDDE97654C6BBF956AB55F29888F"
-            "Icon" = "8:_047B08F4489B46369C9EDD5E5D40B637"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_987A009D038A438CA6903147178D8891"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_54FDF8F4F6DA4A748A754F2E62B0FC92"
             {
             "Name" = "8:IMTS"
             "Arguments" = "8:"
@@ -1564,6 +1600,20 @@
             "Transitive" = "11:FALSE"
             "Target" = "8:_3FDC1CFD341042509133FF4D9D0F9629"
             "Folder" = "8:_D407946CD5D8403E85B0D76C5B59C0E2"
+            "WorkingFolder" = "8:_C2F6DDDE97654C6BBF956AB55F29888F"
+            "Icon" = "8:_047B08F4489B46369C9EDD5E5D40B637"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_84E0A02BFFF84BA9BC716602A47DB8FF"
+            {
+            "Name" = "8:IMTS"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_3FDC1CFD341042509133FF4D9D0F9629"
+            "Folder" = "8:_173D9C6B999E401E8DBBC87ED1159A13"
             "WorkingFolder" = "8:_C2F6DDDE97654C6BBF956AB55F29888F"
             "Icon" = "8:_047B08F4489B46369C9EDD5E5D40B637"
             "Feature" = "8:"
@@ -1969,7 +2019,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_3FDC1CFD341042509133FF4D9D0F9629"
             {
-            "SourcePath" = "8:..\\MoldMonitoringSystem_Nidec\\obj\\Debug\\MoldMonitoringSystem_Nidec.exe"
+            "SourcePath" = "8:..\\MoldMonitoringSystem_Nidec\\obj\\Release\\MoldMonitoringSystem_Nidec.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C2F6DDDE97654C6BBF956AB55F29888F"

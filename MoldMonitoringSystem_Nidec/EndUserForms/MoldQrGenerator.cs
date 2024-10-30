@@ -20,15 +20,12 @@ namespace MoldMonitoringSystem_Nidec.Forms
         private readonly MoldDataBaseServiceUtility _dataBaseServiceUtility = new MoldDataBaseServiceUtility();
         private readonly string _connectionString = "Data Source=192.168.101.41;Initial Catalog=MoldTrackingSystem;User ID=Administrator;Encrypt=False";
 
-
         public MoldQrGenerator(string employeename)
         {
             InitializeComponent();
-           
             _employeename = employeename;   
         }
         
-       
         private void MoldQrGenerator_Load(object sender, EventArgs e)
         {
             LoadThemeUtility.LoadTheme(this);
@@ -43,8 +40,7 @@ namespace MoldMonitoringSystem_Nidec.Forms
             string qrCodeData = $"{partnumber_txt.Text}/{moldnumber_txt.Text}/{die_txt.Text}/{customer_txt.Text}";
             Image qrCodeImage = QRCodeUtility.GenerateQrCode(qrCodeData, 100);
             pictureBox1.Image = QRCodeUtility.Resize(qrCodeImage, pictureBox1.Width, pictureBox1.Height);
-        }
-       
+        }     
         private void die_txt_TextChanged(object sender, EventArgs e)
         {
             UpdateMoldAndCustomerInfo();
@@ -95,7 +91,7 @@ namespace MoldMonitoringSystem_Nidec.Forms
                 string partNumbersLabel = string.Join("/", partNumbers.Take(maxPartNumbers));
 
                 // Construct the label by appending the mold number, die number, and customer details
-                string label = $"{partNumbersLabel}/Mold Number: {moldnumber_txt.Text}/Customer: {customer_txt.Text}";
+                string label = $"Mold Number: {moldnumber_txt.Text}/Customer: {customer_txt.Text}";
 
                 if (pictureBox1.Image != null)
                 {
