@@ -85,8 +85,6 @@ namespace MoldMonitoringSystem_Nidec.Class
 
 
         }
-
-
         private int ExecuteCountQuery(string query, Dictionary<string,object> parameters = null)
         {
             int count = 0;

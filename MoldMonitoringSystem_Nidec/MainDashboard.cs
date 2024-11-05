@@ -50,7 +50,7 @@ namespace MoldMonitoringSystem_Nidec
         // Get Employee Name
         private void GetEmployee()
         {
-            lbl_employeename.Text = GetDataFromDB("SELECT employeename FROM Users WHERE username = @username",
+            lbl_employeename.Text = GetDataFromDB("SELECT employeename FROM imts_users WHERE username = @username",
                                                   new Dictionary<string, object> { { "@username", _employeename } });
         }
 
@@ -58,11 +58,10 @@ namespace MoldMonitoringSystem_Nidec
         private string GetDataFromDB(string query, Dictionary<string, object> parameters)
         {
             string result = string.Empty;
-            string connectionString = "Data Source=192.168.101.41;Initial Catalog=MoldTrackingSystem;User ID=Administrator;Encrypt=False";
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = DatabaseConnection.GetSqlConnection())
                 {
                     connection.Open();
                     using (SqlCommand cmd = new SqlCommand(query, connection))

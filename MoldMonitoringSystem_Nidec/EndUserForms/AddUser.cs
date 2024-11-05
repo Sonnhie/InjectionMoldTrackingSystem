@@ -62,8 +62,6 @@ namespace MoldMonitoringSystem_Nidec.EndUserForms
                 userid_textbox.Focus(); // Set focus back to the userid textbox
                 return;
             }
-
-            // If user doesn't exist, proceed to add the new user
             bool UserAdded = _UserDatabaseServiceUtility.AddUserData(NewUser);
 
             if (UserAdded)

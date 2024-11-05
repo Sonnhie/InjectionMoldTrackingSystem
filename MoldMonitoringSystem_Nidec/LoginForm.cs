@@ -26,7 +26,6 @@ namespace MoldMonitoringSystem_Nidec
             lockoutTimer.Tick += LockoutTimer_Tick;
             textBox1.Focus();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             // Handle lockout
@@ -41,28 +40,24 @@ namespace MoldMonitoringSystem_Nidec
                 {
                     var adminform = new AdministratorManagement(loggedInUser.Section, loggedInUser.userid, loggedInUser.Type);
                     adminform.Show();
-                    this.Hide();
+                    Hide();
                 }
                 else
                 {
-                    // Success: open the dashboard and hide the login form
                     var mainForm = new MainDashboard(loggedInUser.Section, loggedInUser.userid, loggedInUser.Type);
                     mainForm.Show();
-                    this.Hide();
+                    Hide();
                 }
-               
             }
             else
             {
                 HandleFailedLogin();
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void HandleFailedLogin()
         {
             failedAttempts++;
@@ -79,7 +74,6 @@ namespace MoldMonitoringSystem_Nidec
                 MessageBox.Show($"Login failed. You have {MaxFailedAttempts - failedAttempts} attempts left.");
             }
         }
-
         private bool IsLockedOut()
         {
             if (isLockedOut)

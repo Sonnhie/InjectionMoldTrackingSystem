@@ -49,7 +49,7 @@ namespace MoldMonitoringSystem_Nidec
         }
         private void GetEmployee()
         {
-            lbl_employeename.Text = GetDataFromDB("SELECT employeename FROM Users WHERE username = @username",
+            lbl_employeename.Text = GetDataFromDB("SELECT employeename FROM imts_users WHERE username = @username",
                                                   new Dictionary<string, object> { { "@username", _employeename } });
         }
 
@@ -57,7 +57,7 @@ namespace MoldMonitoringSystem_Nidec
         private string GetDataFromDB(string query, Dictionary<string, object> parameters)
         {
             string result = string.Empty;
-            string connectionString = "Data Source=192.168.101.41;Initial Catalog=MoldTrackingSystem;User ID=Administrator;Encrypt=False";
+            string connectionString = "Data Source=(localdb)\\Local;Initial Catalog=MoldTrackingSystem;Integrated Security=True";
 
             try
             {
@@ -82,10 +82,6 @@ namespace MoldMonitoringSystem_Nidec
             return result;
         }
 
-        // Set button access based on section
-        
-
-        // Select theme color
         private Color SelectThemeColor()
         {
             int index = random.Next(ThemeColor.ColorList.Count);

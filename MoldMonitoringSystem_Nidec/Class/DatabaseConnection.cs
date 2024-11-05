@@ -11,55 +11,30 @@ namespace MoldMonitoringSystem_Nidec.Class
 
     public static class DatabaseConnection
     {
+
         private static SqlConnection _connection;
 
-        // Define the connection string (you can also load this from a configuration file)
-        private static string _connectionString = "Data Source=192.168.101.41;Initial Catalog=MoldTrackingSystem;User ID=Administrator;Encrypt=False";
+        private static readonly string _connectionString = "Data Source=(localdb)\\Local;Initial Catalog=MoldTrackingSystem;Integrated Security=True";
 
-        // Get the SqlConnection instance
-        public static SqlConnection GetConnection()
+        public static SqlConnection GetSqlConnection()
         {
-            if (_connection == null)
-            {
-                _connection = new SqlConnection(_connectionString);
-            }
-
-            return _connection;
+            var _conn = new SqlConnection(_connectionString);
+            return _conn;
         }
 
-        // Open the database connection
-        public static void OpenConnection()
+        public static SqlConnection OpenConnection()
         {
-            if (_connection == null)
-            {
-                _connection = new SqlConnection(_connectionString);
-            }
-
-            if (_connection.State == System.Data.ConnectionState.Closed)
-            {
-                //_connection = new SqlConnection(_connectionString);
-                _connection.Open();
-            }
+            SqlConnection connection = GetSqlConnection();
+            connection.Open();
+            return connection;
         }
 
-        // Close the database connection
-        public static void CloseConnection()
+        public static void CloseConnection(SqlConnection connection)
         {
-            if (_connection != null && _connection.State == System.Data.ConnectionState.Open)
+            if (connection != null && connection.State == System.Data.ConnectionState.Open)
             {
-                _connection.Close();
+                connection.Close();
             }
         }
-
-        // Dispose the connection when the application closes (optional)
-        public static void DisposeConnection()
-        {
-            if (_connection != null)
-            {
-                _connection.Dispose();
-                _connection = null;
-            }
-        }
-
     }
 }

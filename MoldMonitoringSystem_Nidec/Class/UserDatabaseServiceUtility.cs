@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace MoldMonitoringSystem_Nidec.Class
 {
-    public class UserDatabaseServiceUtility
+    public class UserDatabaseServiceUtility 
     {
         private readonly string _connectionString;
         public UserDatabaseServiceUtility()
         {
-            _connectionString = "Data Source=192.168.101.41;Initial Catalog=MoldTrackingSystem;User ID=Administrator;Encrypt=False"; ;
+            _connectionString = "Data Source=(localdb)\\Local;Initial Catalog=MoldTrackingSystem;Integrated Security=True"; 
         }
         public class UserData
         {
@@ -23,34 +23,9 @@ namespace MoldMonitoringSystem_Nidec.Class
             public string Type { get; set; }
             public string employeename { get; set; }
         }
-        
-        public string GetEmployeeSection(string userid)
-        {
-            string section = "";
-
-            string query = "SELECT section FROM Users WHERE username = @username";
-
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(_connectionString))
-                {
-                    connection.Open();
-                    using(SqlCommand command = new SqlCommand(query,connection))
-                    {
-                        command.Parameters.AddWithValue("@username", userid);
-                        section = command.ExecuteScalar()?.ToString();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error fetching section for employee: " + ex.Message);
-            }
-            return null;
-        }
         public UserData Validateuser(string username, string password)
         {
-            const string query = "SELECT username, section, type FROM Users WHERE username COLLATE Latin1_General_BIN = @username AND password COLLATE Latin1_General_BIN = @password";
+            const string query = "SELECT username, section, type FROM imts_users WHERE username COLLATE Latin1_General_BIN = @username AND password COLLATE Latin1_General_BIN = @password";
 
             try
             {
@@ -79,7 +54,7 @@ namespace MoldMonitoringSystem_Nidec.Class
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error retrieving equipment data: " + ex.Message);
+                Console.WriteLine("Error retrieving user data: " + ex.Message);
             }
 
             return null; // User not found or error occurred
@@ -88,7 +63,7 @@ namespace MoldMonitoringSystem_Nidec.Class
         {
             try
             {
-                string duplicateuser = "select count(*) from Users where username = @username and employeename = @employeename";
+                string duplicateuser = "select count(*) from imts_users where username = @username and employeename = @employeename";
 
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
@@ -112,7 +87,7 @@ namespace MoldMonitoringSystem_Nidec.Class
         }
         public bool AddUserData(UserData user)
         {
-            string register = "insert into Users (username, password, type, section, date_created, employeename)" +
+            string register = "insert into imts_users (username, password, type, section, date_created, employeename)" +
                               " values (@username, @password, @type, " +
                               "@section, @date_created, @employeename)";
 
@@ -145,7 +120,7 @@ namespace MoldMonitoringSystem_Nidec.Class
         }
         public bool DeleteUser(UserData user)
         {
-            string DeleteUsers = "delete from Users where username = @userid";
+            string DeleteUsers = "delete from imts_users where username = @userid";
 
             try
             {
@@ -170,7 +145,7 @@ namespace MoldMonitoringSystem_Nidec.Class
         }
         public bool UpdateUser(UserData user)
         {
-            string updatequery = "update Users set type = @role, section = @section, employeename = @employeename" +
+            string updatequery = "update imts_users set type = @role, section = @section, employeename = @employeename" +
                                  "  where username = @userid";
             try
             {
@@ -200,7 +175,7 @@ namespace MoldMonitoringSystem_Nidec.Class
         }
         public UserData UserInformation(string userid)
         {
-            string query = "SELECT type, section, employeename FROM Users where username = @userid";
+            string query = "SELECT type, section, employeename FROM imts_users where username = @userid";
 
             try
             {
@@ -235,7 +210,7 @@ namespace MoldMonitoringSystem_Nidec.Class
         }
         public bool UpdatePassword(string password, string userid)
         {
-            string UpdatePasswordQuery = "update Users set password = @password where username = @userid";
+            string UpdatePasswordQuery = "update imts_users set password = @password where username = @userid";
 
             try
             {
@@ -271,8 +246,7 @@ namespace MoldMonitoringSystem_Nidec.Class
 
         public bool ValidateUserExistence(UserData user)
         {
-            string CheckUser = "select count(*) from Users where username = @userid";
-
+            string CheckUser = "select count(*) from imts_users where username = @userid";
             try
             {
                 using (SqlConnection conn = new SqlConnection(_connectionString))
